@@ -87,20 +87,20 @@ main {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 5rem;
+    margin: auto;
     justify-content: space-between;
     max-height: 80vh;
+    width: 100%;
 }
 
 .content {
-    max-height: fit-content;
-    max-width: 40rem;
+    max-width: 35rem;
     margin-right: 10%;
     z-index: 999;
 }
 
 .content h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 600;
     letter-spacing: 0.025em;
     margin: 2rem 0;
