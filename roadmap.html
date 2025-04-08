@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roadmap</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .roadmap {
+            position: relative;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 0;
+        }
+
+        .curve {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .card {
+            width: 40%;
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 1.5rem;
+            position: relative;
+            margin: 4rem 0;
+            z-index: 2;
+            border: 1px solid #04FF15;
+            box-shadow: 0 0 10px rgba(4, 255, 21, 0.2);
+        }
+
+        .card.left {
+            left: 0;
+            margin-left: 0;
+        }
+
+        .card.right {
+            left: 60%;
+            margin-left: auto;
+        }
+
+        .card h3 {
+            color: #04FF15;
+            margin-top: 0;
+        }
+
+        .card ul {
+            padding-left: 1.2rem;
+        }
+
+        .card ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .star {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #04FF15;
+            font-size: 1.5rem;
+        }
+
+        .star.top {
+            top: 0;
+        }
+
+        .star.bottom {
+            bottom: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+
+            .card,
+            .card.left,
+            .card.right {
+                width: 90%;
+                left: 0;
+                margin: 2rem auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="roadmap">
+        <div class="star top">★</div><svg class="curve" width="100%" height="800">
+            <path d="M50% 0 C 55% 150, 45% 300, 50% 450 C 55% 600, 45% 750, 50% 900" stroke="#04FF15" fill="none"
+                stroke-width="2" stroke-dasharray="5,5" />
+        </svg>
+
+        <div class="card left">
+            <h3>Интернет-магазины и платформы</h3>
+            <ul>
+                <li>Удобный каталог и корзина</li>
+                <li>Интеграции платёжных систем</li>
+                <li>Быстрая загрузка и безопасность</li>
+            </ul>
+            <p>Вы продаёте — мы делаем процесс простым.</p>
+        </div>
+
+        <div class="card right">
+            <h3>Сайты для бизнеса</h3>
+            <ul>
+                <li>Лендинги</li>
+                <li>Корпоративные сайты</li>
+                <li>Персональные сайты</li>
+            </ul>
+            <p>Помогаем развивать бренд онлайн.</p>
+        </div>
+
+        <div class="card left">
+            <h3>Мобильные приложения</h3>
+            <ul>
+                <li>Разработка под iOS и Android</li>
+                <li>Интуитивный UI</li>
+                <li>Надёжная архитектура</li>
+            </ul>
+            <p>Идея? Мы сделаем digital-продукт.</p>
+        </div>
+
+        <div class="star bottom">★</div>
+
+    </div>
+</body>
+
+</html>
