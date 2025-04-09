@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lumo</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/inputmask@5.0.9/dist/colormask.min.css">
+    <script>
+        var selector = document.getElementById("phone");
+        var im = new Inputmask("+7 (999) 999-99-99");
+        im.mask(selector);
+    </script>
 </head>
 
 <body class="homePageBody">
@@ -17,15 +23,17 @@
                 <a href="">Главная</a>
                 <a href="#">Услуги</a>
                 <a href="#">Контакты</a>
-                <button class="btn-request inter">Оставить заявку</button>
+                <button class="btn-request inter">Связаться с нами</button>
             </nav>
         </header>
 
         <main>
             <div class="cover">
                 <div class="content-3d">
+                    <div class="light"></div>
                     <spline-viewer class="iphone-3d"
-                        url="https://prod.spline.design/WnwXCEhr6cTPJWyc/scene.splinecode"></spline-viewer>
+                        url="https://prod.spline.design/aplTCSGNAYOxE4IG/scene.splinecode"></spline-viewer>
+                    <div class="remove-logo"></div>
                 </div>
 
                 <div class="content">
@@ -41,15 +49,57 @@
             </div>
 
             <div class="services">
+                <h1>Мы предлагаем вашему бизнесу</h1>
+                <div class="roadmap">
+                    <div class="line"></div>
+                    <svg class="curve" width="100%" height="600">
+                        <path d="M50% 0 C 55% 100, 45% 200, 50% 300 C 55% 400, 45% 500, 50% 600" stroke="#04FF15"
+                            fill="none" stroke-width="2" stroke-dasharray="5,5" />
+                    </svg>
 
+
+                    <div class="service-card rightt">
+                        <h2>Интернет-магазины и платформы</h2>
+                        <ul>
+                            <li>Удобный каталог и корзина</li>
+                            <li>Интеграции платёжных систем</li>
+                            <li>Быстрая загрузка и безопасность</li>
+                        </ul>
+                        <p>Вы продаёте — мы делаем процесс простым.</p>
+                    </div>
+
+                    <div class="service-card left">
+                        <h2>Сайты для бизнеса</h2>
+                        <ul>
+                            <li>Лендинги</li>
+                            <li>Корпоративные сайты</li>
+                            <li>Персональные сайты</li>
+                        </ul>
+                        <p>Помогаем развивать бренд онлайн.</p>
+                    </div>
+
+                    <div class="service-card rightb">
+                        <h2>Мобильные приложения</h2>
+                        <ul>
+                            <li>Разработка под iOS и Android</li>
+                            <li>Интуитивный UI</li>
+                            <li>Надёжная архитектура</li>
+                        </ul>
+                        <p>Идея? Мы сделаем digital-продукт.</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="request-form">
+            <div class="form-container">
                 <div class="request-card">
                     <h2>Оставьте заявку <br> прямо сейчас</h2>
-                    <input type="text" name="name" id="fullname" placeholder="Ваше имя/Название организации">
-                    <input type="phone" id="phone" placeholder="+7 ___ ___ __ __">
-                    <input type="submit" id="btn-send-request">
+                    <form id="request-form">
+                        <input type="text" class="inter" name="name" id="fullname"
+                            placeholder="Напишите ФИО/Название организации">
+                        <input type="tel" class="inter" id="phone" placeholder="+7 (___) ___-__-__"
+                            pattern="\+7\s\(\d{3}\)\s\d{3}-\d{2}-\d{2}">
+                        <input type="submit" class="inter" id="btn-send-request">
+                    </form>
                 </div>
             </div>
         </main>
@@ -57,6 +107,8 @@
     </div>
 
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/inputmask@5.0.9/dist/jquery.inputmask.min.js"></script>
+
 </body>
 
 </html>
