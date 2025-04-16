@@ -101,7 +101,7 @@ main {
     align-items: center;
     margin: auto;
     justify-content: space-evenly;
-    max-height: 100vh;
+    max-height: calc(var(--vh) * 100);
     width: 100%;
     /* border: 1px solid red; */
 }
@@ -109,7 +109,7 @@ main {
 .content-3d {
     flex: 1;
     position: relative;
-    height: 89vh;
+    height: calc(var(--vh) * 89);
     /* border: 1px solid red; */
 }
 
@@ -399,13 +399,13 @@ main {
         align-items: center;
         margin: auto;
         justify-content: space-between;
-        min-height: 89vh;
+        min-height: calc(var(--vh) * 89);
         width: 100%;
         overflow-x: hidden;
     }
 
     .content-3d {
-        min-height: 45vh;
+        min-height: calc(var(--vh) * 44.5);
         width: 100%;
     }
 
@@ -427,7 +427,7 @@ main {
     }
 
     .content {
-        max-height: 45vh;
+        max-height: calc(var(--vh) * 44.5);
         z-index: 2;
         margin: 0 10vw;
         /* border: 1px solid red; */
@@ -471,13 +471,13 @@ main {
         align-items: center;
         margin: auto;
         justify-content: space-between;
-        min-height: 89vh;
+        min-height: calc(var(--vh) * 89);
         width: 100%;
         overflow-x: hidden;
     }
 
     .content-3d {
-        min-height: 44.5vh;
+        min-height: calc(var(--vh) * 44.5);
         width: 100%;
     }
 
@@ -499,7 +499,7 @@ main {
     }
 
     .content {
-        max-height: 44.5vh;
+        max-height: calc(var(--vh) * 44.5);
         width: 100%;
         z-index: 2;
         padding: 10vw 5vw;

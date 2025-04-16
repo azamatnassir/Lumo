@@ -15,6 +15,13 @@
         // var selector = document.getElementById("phone");
         // var im = new Inputmask("+7 (999) 999-99-99");
         // im.mask(selector);
+        function setVh() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+
+        setVh();
+        window.addEventListener('resize', setVh);
     </script>
 </head>
 
