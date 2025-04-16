@@ -459,11 +459,13 @@ main {
     }
 
     nav a {
-        font-size: 2.1vw;
+        display: none;
     }
 
     .btn-request {
-        font-size: 2.1vw;
+        padding: 2.5vw 3.5vw;
+        font-size: 3vw;
+        border-radius: 45px;
     }
 
     .cover {
@@ -492,6 +494,7 @@ main {
         width: 150%;
         left: 50%;
         transform: translateX(-50%);
+        display: block;
     }
 
     .remove-logo {
