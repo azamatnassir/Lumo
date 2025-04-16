@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 .inter {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
@@ -38,7 +39,11 @@ header {
     top: 0;
     padding: 1vw 10vw;
     z-index: 999;
-    background-color: #000;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
 }
 
 header img {
@@ -373,4 +378,151 @@ main {
 .social img {
     width: auto;
     height: 2vw;
+    cursor: pointer;
+}
+
+@media (max-width: 1300px) {
+    header {
+        padding: 1vw 5vw;
+    }
+
+    nav a {
+        font-size: 2.1vw;
+    }
+
+    .btn-request {
+        font-size: 2.1vw;
+    }
+
+    .cover {
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        justify-content: space-between;
+        min-height: 89vh;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .content-3d {
+        min-height: 45vh;
+        width: 100%;
+    }
+
+    .light {
+        width: 40vw;
+        height: 40vw;
+    }
+
+    .iphone-3d {
+        top: -30%;
+        height: 160%;
+        width: 150%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .remove-logo {
+        display: none;
+    }
+
+    .content {
+        max-height: 45vh;
+        z-index: 2;
+        margin: 0 10vw;
+        /* border: 1px solid red; */
+    }
+
+    .content h1 {
+        font-size: 6.5vw;
+        line-height: 1.2;
+        text-shadow: 0 0 5px rgb(4, 255, 21, 0.418);
+        color: #04FF15;
+        /* border: 1px solid red; */
+    }
+
+    .description {
+        font-size: 3vw;
+        /* border: 1px solid red; */
+    }
+
+    .btn-send-request {
+        padding: 2vw 3.5vw;
+        font-size: 2.5vw;
+        border-radius: 45px;
+    }
+}
+
+@media (max-width: 756px) {
+    header {
+        padding: 1vw 5vw;
+    }
+
+    nav a {
+        font-size: 2.1vw;
+    }
+
+    .btn-request {
+        font-size: 2.1vw;
+    }
+
+    .cover {
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        justify-content: space-between;
+        min-height: 89vh;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .content-3d {
+        min-height: 44.5vh;
+        width: 100%;
+    }
+
+    .light {
+        width: 80vw;
+        height: 80vw;
+    }
+
+    .iphone-3d {
+        top: -30%;
+        height: 160%;
+        width: 150%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .remove-logo {
+        display: none;
+    }
+
+    .content {
+        max-height: 44.5vh;
+        width: 100%;
+        z-index: 2;
+        padding: 10vw 5vw;
+        background-color: #000;
+        /* border: 1px solid red; */
+    }
+
+    .content h1 {
+        font-size: 8.6vw;
+        line-height: 1.2;
+        text-shadow: 0 0 5px rgb(4, 255, 21, 0.418);
+        color: #04FF15;
+        /* border: 1px solid red; */
+    }
+
+    .description {
+        font-size: 3.8vw;
+        /* border: 1px solid red; */
+    }
+
+    .btn-send-request {
+        padding: 2.5vw 4vw;
+        font-size: 3.8vw;
+        border-radius: 45px;
+    }
 }
