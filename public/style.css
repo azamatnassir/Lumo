@@ -325,16 +325,6 @@ main {
     justify-content: start;
 }
 
-.card-container.left img {
-    height: auto;
-    transform: translateX(1vw);
-}
-
-.card-container.right img {
-    height: auto;
-    transform: translate(-1.2vw, 4vw);
-}
-
 .service-card {
     display: flex;
     flex-direction: column;
@@ -342,11 +332,16 @@ main {
     align-items: center;
     width: 25vw;
     background: #d9d9d9;
-    color: #000;
+    color: #fff;
     align-items: center;
     padding: 1.5vw;
     margin: 4vw 0;
     border-radius: 25px;
+    background: rgba(217, 217, 217, 0.15);
+    border-radius: 25px;
+    box-shadow: 0 4px 30px rgba(217, 217, 217, 0.15);
+    backdrop-filter: blur(6.7px);
+    -webkit-backdrop-filter: blur(6.7px);
 }
 
 .service-card h2 {
@@ -463,8 +458,8 @@ main {
     }
 
     .btn-request {
-        padding: 2.5vw 3.5vw;
-        font-size: 3vw;
+        padding: 2.5vw 4vw;
+        font-size: 3.8vw;
         border-radius: 45px;
     }
 
@@ -527,5 +522,64 @@ main {
         padding: 2.5vw 4vw;
         font-size: 3.8vw;
         border-radius: 45px;
+    }
+
+    .request-card {
+        padding: 5px 15px;
+        gap: 15px;
+        width: 90%;
+        aspect-ratio: 1 / 1;
+    }
+
+    .request-card h2 {
+        font-size: 5vw;
+        text-align: center;
+        color: #000;
+    }
+
+    .request-card input {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 10px;
+        height: 8.5vh;
+        font-size: 3vw;
+        border-radius: 1rem;
+        background-color: transparent;
+        border: 0.5px solid #000;
+        color: #000;
+    }
+
+    #btn-send-request {
+        font-size: 3.5vw;
+    }
+
+    .footer-container {
+        /* border-radius: 25px 25px 0 0; */
+        background-color: #222;
+        height: calc(var(--vh) * 20);
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 6vw 10vw;
+    }
+
+    .footer-logo {
+        width: 35vw;
+        height: auto;
+    }
+
+    .social {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0 5vw;
+    }
+
+    .social img {
+        width: auto;
+        height: 3.5vh;
+        cursor: pointer;
     }
 }
