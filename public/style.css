@@ -101,7 +101,7 @@ main {
     align-items: center;
     margin: auto;
     justify-content: space-evenly;
-    max-height: calc(var(--vh) * 100);
+    max-height: calc(var(--vh, 1vh) * 100);
     width: 100%;
     /* border: 1px solid red; */
 }
@@ -109,7 +109,7 @@ main {
 .content-3d {
     flex: 1;
     position: relative;
-    height: calc(var(--vh) * 89);
+    height: calc(var(--vh, 1vh) * 89);
     /* border: 1px solid red; */
 }
 
@@ -133,7 +133,7 @@ main {
 
 .remove-logo {
     width: 14vw;
-    height: 10vh;
+    height: calc(var(--vh, 1vh) * 10);
     position: absolute;
     bottom: 0;
     right: 0;
@@ -147,6 +147,7 @@ main {
     margin-top: -5%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .content h1 {
@@ -256,21 +257,21 @@ main {
     box-shadow: 0px 10px 17px -6px rgba(0, 0, 0, 0.5);
 }
 
-.services {
+.services.lg {
     width: 100%;
     margin: auto;
     height: fit-content;
     /* border: 1px solid red; */
 }
 
-.services h1 {
+.services.lg h1 {
     margin-top: 10vh;
     text-align: center;
     color: #04FF15;
     font-size: 2.2vw;
 }
 
-.roadmap {
+.services.lg .roadmap {
     width: 100%;
     height: fit-content;
     display: flex;
@@ -307,7 +308,7 @@ main {
     width: 30vw;
 }
 
-.card-container {
+.services.lg .card-container {
     width: 100%;
     height: auto;
     display: flex;
@@ -317,15 +318,15 @@ main {
     /* border: 1px solid red; */
 }
 
-.card-container.left {
+.services.lg .card-container.left {
     justify-content: end;
 }
 
-.card-container.right {
+.services.lg .card-container.right {
     justify-content: start;
 }
 
-.service-card {
+.services.lg .service-card {
     display: flex;
     flex-direction: column;
     font-size: 1.1vw;
@@ -344,7 +345,7 @@ main {
     -webkit-backdrop-filter: blur(6.7px);
 }
 
-.service-card h2 {
+.services.lg .service-card h2 {
     color: #00C80D;
     font-size: 1.7vw;
     text-shadow: 0 0 5px rgba(4, 255, 21, 0.212);
@@ -355,7 +356,7 @@ main {
     flex-direction: row;
     justify-content: space-between;
     padding: 1vw 10vw;
-    background-color: #fff;
+    background-color: #222;
 }
 
 .footer-logo {
@@ -394,13 +395,13 @@ main {
         align-items: center;
         margin: auto;
         justify-content: space-between;
-        min-height: calc(var(--vh) * 89);
+        min-height: calc(var(--vh, 1vh) * 89);
         width: 100%;
         overflow-x: hidden;
     }
 
     .content-3d {
-        min-height: calc(var(--vh) * 44.5);
+        min-height: calc(var(--vh, 1vh) * 44.5);
         width: 100%;
     }
 
@@ -410,8 +411,8 @@ main {
     }
 
     .iphone-3d {
-        top: -30%;
-        height: 160%;
+        top: -20%;
+        height: 150%;
         width: 150%;
         left: 50%;
         transform: translateX(-50%);
@@ -422,7 +423,7 @@ main {
     }
 
     .content {
-        max-height: calc(var(--vh) * 44.5);
+        max-height: calc(var(--vh, 1vh) * 44.5);
         z-index: 2;
         margin: 0 10vw;
         /* border: 1px solid red; */
@@ -446,11 +447,45 @@ main {
         font-size: 2.5vw;
         border-radius: 45px;
     }
+
+    .request-card {
+        padding: 5px 15px;
+        gap: 15px;
+        width: 60%;
+        aspect-ratio: 1 / 1;
+    }
+
+    .request-card h2 {
+        font-size: 5vw;
+        text-align: center;
+        color: #000;
+    }
+
+    .request-card input {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 10px;
+        height: 8.5vh;
+        font-size: 3vw;
+        border-radius: 1rem;
+        background-color: transparent;
+        border: 0.5px solid #000;
+        color: #000;
+    }
+
+    #btn-send-request {
+        font-size: 3.5vw;
+    }
 }
 
 @media (max-width: 756px) {
     header {
         padding: 1vw 5vw;
+    }
+
+    header img {
+        height: 2.5rem;
+        font-weight: 300;
     }
 
     nav a {
@@ -459,7 +494,7 @@ main {
 
     .btn-request {
         padding: 2.5vw 4vw;
-        font-size: 3.8vw;
+        font-size: 3.5vw;
         border-radius: 45px;
     }
 
@@ -468,13 +503,13 @@ main {
         align-items: center;
         margin: auto;
         justify-content: space-between;
-        min-height: calc(var(--vh) * 89);
+        min-height: calc(var(--vh, 1vh) * 89);
         width: 100%;
         overflow-x: hidden;
     }
 
     .content-3d {
-        min-height: calc(var(--vh) * 44.5);
+        min-height: calc(var(--vh, 1vh) * 49);
         width: 100%;
     }
 
@@ -484,8 +519,8 @@ main {
     }
 
     .iphone-3d {
-        top: -30%;
-        height: 160%;
+        top: -20%;
+        height: 140%;
         width: 150%;
         left: 50%;
         transform: translateX(-50%);
@@ -497,10 +532,10 @@ main {
     }
 
     .content {
-        max-height: calc(var(--vh) * 44.5);
+        max-height: calc(var(--vh, 1vh) * 40);
         width: 100%;
         z-index: 2;
-        padding: 10vw 5vw;
+        padding: 0 5vw;
         background-color: #000;
         /* border: 1px solid red; */
     }
@@ -556,7 +591,7 @@ main {
     .footer-container {
         /* border-radius: 25px 25px 0 0; */
         background-color: #222;
-        height: calc(var(--vh) * 20);
+        height: calc(var(--vh, 1vh) * 20);
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
