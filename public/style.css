@@ -408,13 +408,13 @@ main {
         align-items: center;
         margin: auto;
         justify-content: space-between;
-        height: calc(var(--vh, 1vh) * 89);
+        min-height: calc(var(--vh, 1vh) * 89);
         width: 100%;
         overflow-x: hidden;
     }
 
     .content-3d {
-        height: calc(var(--vh, 1vh) * 44.5);
+        min-height: calc(var(--vh, 1vh) * 44.5);
         width: 100%;
     }
 
@@ -439,7 +439,6 @@ main {
         max-height: calc(var(--vh, 1vh) * 44.5);
         z-index: 2;
         margin: 0 10vw;
-        /* border: 1px solid red; */
     }
 
     .content h1 {
@@ -516,13 +515,13 @@ main {
         align-items: center;
         margin: auto;
         justify-content: space-between;
-        height: calc(var(--vh, 1vh) * 89);
+        min-height: calc(var(--vh, 1vh) * 89);
         width: 100%;
         overflow-x: hidden;
     }
 
     .content-3d {
-        height: calc(var(--vh, 1vh) * 49);
+        min-height: calc(var(--vh, 1vh) * 49);
         width: 100%;
     }
 
