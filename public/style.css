@@ -569,7 +569,14 @@ main {
         display: none;
     }
 
+    input[type=radio] {
+        display: none;
+    }
+
     .services.sm {
+        width: 100%;
+        height: calc(var(--vh, 1vh) * 100);
+        transform-style: preserve-3d;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -583,19 +590,34 @@ main {
         font-size: 5vw;
     }
 
+    .services.sm .cards {
+        position: relative;
+        width: 100%;
+        height: 80%;
+        margin: auto;
+    }
+
     .services.sm .service-card {
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 65%;
+        height: fit-content;
+        transition: transform 0.4s ease;
+        cursor: pointer;
         display: flex;
         flex-direction: column;
         font-size: 3vw;
         align-items: center;
-        width: 65vw;
+        justify-content: center;
         background: #d9d9d9;
         color: #fff;
-        align-items: center;
         padding: 5vw;
-        margin: 4vw 0;
         border-radius: 25px;
-        background: rgba(217, 217, 217, 0.15);
+        background: rgb(34, 34, 34);
         border-radius: 25px;
         box-shadow: 0 4px 30px rgba(217, 217, 217, 0.15);
         backdrop-filter: blur(6.7px);
@@ -605,6 +627,36 @@ main {
     .services.sm .service-card h2 {
         font-size: 4vw;
         color: #04FF15;
+    }
+
+    #item-1:checked~.cards #song-3,
+    #item-2:checked~.cards #song-1,
+    #item-3:checked~.cards #song-2 {
+        transform: translateY(-40%) scale(0.8);
+        opacity: 0.25;
+        z-index: 0;
+    }
+
+    #item-1:checked~.cards #song-2,
+    #item-2:checked~.cards #song-3,
+    #item-3:checked~.cards #song-1 {
+        transform: translateY(40%) scale(0.8);
+        opacity: 0.25;
+        z-index: 0;
+    }
+
+    #item-1:checked~.cards #song-1,
+    #item-2:checked~.cards #song-2,
+    #item-3:checked~.cards #song-3 {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+        z-index: 1;
+    }
+
+    #item-1:checked~.cards #song-1 img,
+    #item-2:checked~.cards #song-2 img,
+    #item-3:checked~.cards #song-3 img {
+        box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47);
     }
 
     .request-card {

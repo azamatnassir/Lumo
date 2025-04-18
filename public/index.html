@@ -109,15 +109,38 @@
             </div>
 
             <div class="services sm">
+                <input type="radio" name="slider" id="item-1" checked>
+                <input type="radio" name="slider" id="item-2">
+                <input type="radio" name="slider" id="item-3">
                 <h1>Мы предлагаем вашему бизнесу</h1>
-                <div class="service-card">
-                    <h2>Интернет-магазины и платформы</h2>
-                    <ul>
-                        <li>Удобный каталог и корзина</li>
-                        <li>Интеграции платёжных систем</li>
-                        <li>Быстрая загрузка и безопасность</li>
-                    </ul>
-                    <p>Вы продаёте — мы делаем процесс простым.</p>
+                <div class="cards">
+                    <label class="service-card" for="item-1" id="song-1">
+                        <h2>Интернет-магазины и платформы</h2>
+                        <ul>
+                            <li>Удобный каталог и корзина</li>
+                            <li>Интеграции платёжных систем</li>
+                            <li>Быстрая загрузка и безопасность</li>
+                        </ul>
+                        <p>Вы продаёте — мы делаем процесс простым.</p>
+                    </label>
+                    <label class="service-card" for="item-2" id="song-2">
+                        <h2>Сайты для бизнеса</h2>
+                        <ul>
+                            <li>Лендинги</li>
+                            <li>Корпоративные сайты</li>
+                            <li>Персональные сайты</li>
+                        </ul>
+                        <p>Помогаем развивать бренд онлайн.</p>
+                    </label>
+                    <label class="service-card" for="item-3" id="song-3">
+                        <h2>Мобильные приложения</h2>
+                        <ul>
+                            <li>Разработка под iOS и Android</li>
+                            <li>Интуитивный UI</li>
+                            <li>Надёжная архитектура</li>
+                        </ul>
+                        <p>Идея? Мы сделаем digital-продукт.</p>
+                    </label>
                 </div>
             </div>
 
@@ -153,7 +176,17 @@
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        const radios = document.querySelectorAll('input[name="slider"]');
+        let index = 0;
 
+        function autoSlide() {
+            radios[index].checked = true;
+            index = (index + 1) % radios.length;
+        }
+
+        setInterval(autoSlide, 3000);
+    </script>
 </body>
 
 </html>
