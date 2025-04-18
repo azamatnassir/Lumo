@@ -11,18 +11,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
-    <script>
-        // var selector = document.getElementById("phone");
-        // var im = new Inputmask("+7 (999) 999-99-99");
-        // im.mask(selector);
-        function setVh() {
-            let vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty('--vh', `${vh}px`);
-        }
-
-        setVh();
-        window.addEventListener('resize', setVh);
-    </script>
 </head>
 
 <body class="homePageBody">
@@ -177,6 +165,15 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script>
+        function setViewportProperty() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+
+        setViewportProperty();
+
+        window.addEventListener('resize', setViewportProperty);
+
         const radios = document.querySelectorAll('input[name="slider"]');
         let index = 0;
 
