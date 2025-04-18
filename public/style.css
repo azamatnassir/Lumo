@@ -134,7 +134,7 @@ main {
 .iphone-3d {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: calc(var(--vh, 1vh) * 89);
     /* border: 1px solid red; */
 }
 
@@ -408,13 +408,13 @@ main {
         align-items: center;
         margin: auto;
         justify-content: space-between;
-        min-height: calc(var(--vh, 1vh) * 89);
+        height: calc(var(--vh, 1vh) * 89);
         width: 100%;
         overflow-x: hidden;
     }
 
     .content-3d {
-        min-height: calc(var(--vh, 1vh) * 44.5);
+        height: calc(var(--vh, 1vh) * 44.5);
         width: 100%;
     }
 
@@ -516,13 +516,13 @@ main {
         align-items: center;
         margin: auto;
         justify-content: space-between;
-        min-height: calc(var(--vh, 1vh) * 89);
+        height: calc(var(--vh, 1vh) * 89);
         width: 100%;
         overflow-x: hidden;
     }
 
     .content-3d {
-        min-height: calc(var(--vh, 1vh) * 49);
+        height: calc(var(--vh, 1vh) * 49);
         width: 100%;
     }
 
