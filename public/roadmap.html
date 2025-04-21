@@ -7,160 +7,302 @@
     <title>Автоперелистывающая карусель</title>
     <link href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap" rel="stylesheet">
     <style>
-        * {
+        *,
+        *::before,
+        *::after {
             box-sizing: border-box;
         }
 
-        html,
         body {
-            margin: 0;
-            padding: 0;
+            font-family: 'Work Sans', sans-serif;
+            font-weight: 400;
+            height: 100vh;
+            width: 100vw;
+            background-color: black;
+        }
+
+        .wrapper {
+            height: 100%;
+            width: 100%;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carousel {
+            position: relative;
             width: 100%;
             height: 100%;
-        }
-
-        body {
             display: flex;
-            align-items: center;
             justify-content: center;
-            padding: 30px 10px;
-            font-family: 'DM Sans', sans-serif;
-            transition: background 0.4s ease-in;
-            background-color: #c394f8;
+            align-items: center;
+            flex-direction: column;
         }
 
-        body.blue {
-            background-color: #428aa6;
-        }
-
-        input[type=radio] {
-            display: none;
-        }
-
-        .card {
+        .carousel__item {
             position: absolute;
-            width: 60%;
-            height: 60%;
-            left: 0;
             right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
             margin: auto;
-            transition: transform 0.4s ease;
-            cursor: pointer;
-
             display: flex;
             flex-direction: column;
-            font-size: 1vw;
             align-items: center;
-            color: #fff;
-            align-items: center;
-            padding: 5vw;
+            justify-content: center;
+            width: 70vw;
+            height: 80vw;
             border-radius: 25px;
+            text-align: center;
+            padding: 12px;
+            opacity: 0;
             background: rgb(34, 34, 34);
-            border-radius: 25px;
-            box-shadow: 0 4px 30px rgba(217, 217, 217, 0.15);
+            box-shadow: 0 4px 20px rgba(217, 217, 217, 0.15);
             backdrop-filter: blur(6.7px);
             -webkit-backdrop-filter: blur(6.7px);
+            /* filter: drop-shadow(0 2px 2px #222); */
+            will-change: transform, opacity;
+            animation: carousel-animate-vertical 27s linear infinite;
         }
 
-        .card h2 {
-            font-size: 2vw;
-            color: #04FF15;
+        .carousel__item:nth-child(1) {
+            animation-delay: calc(3s * -1);
         }
 
-        .container {
+        .carousel__item:nth-child(2) {
+            animation-delay: 0s;
+        }
+
+        .carousel__item:nth-child(3) {
+            animation-delay: calc(3s * 1);
+        }
+
+        .carousel__item:nth-child(4) {
+            animation-delay: calc(3s * 2);
+        }
+
+        .carousel__item:nth-child(5) {
+            animation-delay: calc(3s * 3);
+        }
+
+        .carousel__item:nth-child(6) {
+            animation-delay: calc(3s * 4);
+        }
+
+        .carousel__item:nth-child(7) {
+            animation-delay: calc(3s * 5);
+        }
+
+        .carousel__item:nth-child(8) {
+            animation-delay: calc(3s * 6);
+        }
+
+        .carousel__item:nth-child(9) {
+            animation-delay: calc(3s * 7);
+        }
+
+        .carousel__item:last-child {
+            animation-delay: calc(-3s * 2);
+        }
+
+        .carousel__item-head {
             width: 100%;
-            max-width: 800px;
-            max-height: 600px;
-            height: 100%;
-            transform-style: preserve-3d;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .cards {
+            padding: 14px;
             position: relative;
-            width: 80%;
-            height: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #04FF15;
+            font-size: 20px;
         }
 
-        img {
+        .carousel__item-body {
+            text-align: start;
             width: 100%;
-            height: 100%;
-            border-radius: 10px;
-            object-fit: cover;
+            color: white;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-size: 15px;
         }
 
-        #item-1:checked~.cards #song-3,
-        #item-2:checked~.cards #song-1,
-        #item-3:checked~.cards #song-2 {
-            transform: translateY(-40%) scale(0.8);
-            opacity: 0.4;
-            z-index: 0;
+        .title {
+            text-transform: uppercase;
+            text-align: center;
+            margin-top: 10px;
         }
 
-        #item-1:checked~.cards #song-2,
-        #item-2:checked~.cards #song-3,
-        #item-3:checked~.cards #song-1 {
-            transform: translateY(40%) scale(0.8);
-            opacity: 0.4;
-            z-index: 0;
-        }
+        @keyframes carousel-animate-vertical {
+            0% {
+                transform: translateY(50%) scale(0.5);
+                opacity: 0;
+                z-index: 1;
+                visibility: hidden;
+            }
 
-        #item-1:checked~.cards #song-1,
-        #item-2:checked~.cards #song-2,
-        #item-3:checked~.cards #song-3 {
-            transform: translateY(0) scale(1);
-            opacity: 1;
-            z-index: 1;
-        }
+            3%,
+            11.1111% {
+                transform: translateY(50%) scale(0.7);
+                opacity: .4;
+                z-index: 1;
+                visibility: visible;
+            }
 
-        #item-1:checked~.cards #song-1 img,
-        #item-2:checked~.cards #song-2 img,
-        #item-3:checked~.cards #song-3 img {
-            box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47);
+            14.1111%,
+            22.2222% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+                z-index: 2;
+                visibility: visible;
+            }
+
+            25.2222%,
+            33.3333% {
+                transform: translateY(-50%) scale(0.7);
+                opacity: .4;
+                z-index: 0;
+                visibility: visible;
+            }
+
+            36.3333% {
+                transform: translateY(-50%) scale(0.5);
+                opacity: 0;
+                z-index: 0;
+                visibility: visible;
+            }
+
+            100% {
+                transform: translateY(-50%) scale(0.5);
+                opacity: 0;
+                z-index: 0;
+                visibility: hidden;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <input type="radio" name="slider" id="item-1" checked>
-        <input type="radio" name="slider" id="item-2">
-        <input type="radio" name="slider" id="item-3">
-        <div class="cards">
-            <label class="card" for="item-1" id="song-1">
-                <h2>Интернет-магазины и платформы</h2>
-                <ul>
-                    <li>Удобный каталог и корзина</li>
-                    <li>Интеграции платёжных систем</li>
-                    <li>Быстрая загрузка и безопасность</li>
-                </ul>
-                <p>Вы продаёте — мы делаем процесс простым.</p>
-            </label>
-            <label class="card" for="item-2" id="song-2">
-                <img src="https://images.unsplash.com/photo-1559386484-97dfc0e15539?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80"
-                    alt="song">
-            </label>
-            <label class="card" for="item-3" id="song-3">
-                <img src="https://images.unsplash.com/photo-1533461502717-83546f485d24?ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
-                    alt="song">
-            </label>
+    <div class="wrapper">
+        <div class="carousel">
+            <div class="carousel__item">
+                <div class="carousel__item-head">
+                    Интернет-магазины и платформы
+                </div>
+                <div class="carousel__item-body">
+                    <ul>
+                        <li>Удобный каталог и корзина</li>
+                        <li>Интеграции платёжных систем</li>
+                        <li>Быстрая загрузка и безопасность</li>
+                    </ul>
+                    <p class="title">Вы продаёте — мы делаем процесс простым.</p>
+                </div>
+            </div>
+            <div class="carousel__item">
+                <div class="carousel__item-head">
+                    Сайты для бизнеса
+                </div>
+                <div class="carousel__item-body">
+                    <ul>
+                        <li>Лендинги</li>
+                        <li>Корпоративные сайты</li>
+                        <li>Персональные сайты</li>
+                    </ul>
+                    <p class="title">Помогаем развивать бренд онлайн.</p>
+                </div>
+            </div>
+            <div class="carousel__item">
+                <div class="carousel__item-head">
+                    Мобильные приложения
+                </div>
+                <div class="carousel__item-body">
+                    <ul>
+                        <li>Разработка под iOS и Android</li>
+                        <li>Интуитивный UI</li>
+                        <li>Надёжная архитектура</li>
+                    </ul>
+                    <p class="title">Идея? Мы сделаем digital-продукт.</p>
+                </div>
+            </div>
+            <div class="carousel__item">
+                <div class="carousel__item-head">
+                    Интернет-магазины и платформы
+                </div>
+                <div class="carousel__item-body">
+                    <ul>
+                        <li>Удобный каталог и корзина</li>
+                        <li>Интеграции платёжных систем</li>
+                        <li>Быстрая загрузка и безопасность</li>
+                    </ul>
+                    <p class="title">Вы продаёте — мы делаем процесс простым.</p>
+                </div>
+            </div>
+            <div class="carousel__item">
+                <div class="carousel__item-head">
+                    Сайты для бизнеса
+                </div>
+                <div class="carousel__item-body">
+                    <ul>
+                        <li>Лендинги</li>
+                        <li>Корпоративные сайты</li>
+                        <li>Персональные сайты</li>
+                    </ul>
+                    <p class="title">Помогаем развивать бренд онлайн.</p>
+                </div>
+            </div>
+            <div class="carousel__item">
+                <div class="carousel__item-head">
+                    Мобильные приложения
+                </div>
+                <div class="carousel__item-body">
+                    <ul>
+                        <li>Разработка под iOS и Android</li>
+                        <li>Интуитивный UI</li>
+                        <li>Надёжная архитектура</li>
+                    </ul>
+                    <p class="title">Идея? Мы сделаем digital-продукт.</p>
+                </div>
+            </div>
+            <div class="carousel__item">
+                <div class="carousel__item-head">
+                    Интернет-магазины и платформы
+                </div>
+                <div class="carousel__item-body">
+                    <ul>
+                        <li>Удобный каталог и корзина</li>
+                        <li>Интеграции платёжных систем</li>
+                        <li>Быстрая загрузка и безопасность</li>
+                    </ul>
+                    <p class="title">Вы продаёте — мы делаем процесс простым.</p>
+                </div>
+            </div>
+            <div class="carousel__item">
+                <div class="carousel__item-head">
+                    Сайты для бизнеса
+                </div>
+                <div class="carousel__item-body">
+                    <ul>
+                        <li>Лендинги</li>
+                        <li>Корпоративные сайты</li>
+                        <li>Персональные сайты</li>
+                    </ul>
+                    <p class="title">Помогаем развивать бренд онлайн.</p>
+                </div>
+            </div>
+            <div class="carousel__item">
+                <div class="carousel__item-head">
+                    Мобильные приложения
+                </div>
+                <div class="carousel__item-body">
+                    <ul>
+                        <li>Разработка под iOS и Android</li>
+                        <li>Интуитивный UI</li>
+                        <li>Надёжная архитектура</li>
+                    </ul>
+                    <p class="title">Идея? Мы сделаем digital-продукт.</p>
+                </div>
+            </div>
         </div>
     </div>
-
-    <script>
-        // const radios = document.querySelectorAll('input[name="slider"]');
-        // let index = 0;
-
-        // function autoSlide() {
-        //     radios[index].checked = true;
-        //     index = (index + 1) % radios.length;
-        // }
-
-        // setInterval(autoSlide, 3000);
-    </script>
 </body>
 
 </html>

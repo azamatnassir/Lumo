@@ -582,7 +582,7 @@ main {
     .services.sm {
         width: 100%;
         height: calc(var(--vh, 1vh) * 80);
-        margin-top: 10vh;
+        margin-top: 15vh;
         transform-style: preserve-3d;
         display: flex;
         flex-direction: column;
@@ -668,7 +668,7 @@ main {
     .request-card {
         padding: 5px 15px;
         gap: 15px;
-        width: 90%;
+        width: 80%;
         aspect-ratio: 1 / 1;
     }
 
@@ -684,14 +684,15 @@ main {
         margin-bottom: 10px;
         height: 8.5vh;
         font-size: 3vw;
-        border-radius: 1rem;
+        border-radius: 25px;
         background-color: transparent;
         border: 0.5px solid #000;
         color: #000;
     }
 
     #btn-send-request {
-        font-size: 3.5vw;
+        font-size: 3.8vw;
+
     }
 
     .footer-container {
@@ -722,5 +723,155 @@ main {
         width: auto;
         height: 3.5vh;
         cursor: pointer;
+    }
+
+    .carousel {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .carousel__item {
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 75vw;
+        height: 75vw;
+        border-radius: 25px;
+        text-align: center;
+        padding: 10px;
+        opacity: 0;
+        background: rgb(34, 34, 34);
+        box-shadow: 0 4px 20px rgba(217, 217, 217, 0.15);
+        backdrop-filter: blur(6.7px);
+        -webkit-backdrop-filter: blur(6.7px);
+        /* filter: drop-shadow(0 2px 2px #222); */
+        will-change: transform, opacity;
+        animation: carousel-animate-vertical 27s linear infinite;
+    }
+
+    .carousel__item:nth-child(1) {
+        animation-delay: calc(3s * -1);
+    }
+
+    .carousel__item:nth-child(2) {
+        animation-delay: 0s;
+    }
+
+    .carousel__item:nth-child(3) {
+        animation-delay: calc(3s * 1);
+    }
+
+    .carousel__item:nth-child(4) {
+        animation-delay: calc(3s * 2);
+    }
+
+    .carousel__item:nth-child(5) {
+        animation-delay: calc(3s * 3);
+    }
+
+    .carousel__item:nth-child(6) {
+        animation-delay: calc(3s * 4);
+    }
+
+    .carousel__item:nth-child(7) {
+        animation-delay: calc(3s * 5);
+    }
+
+    .carousel__item:nth-child(8) {
+        animation-delay: calc(3s * 6);
+    }
+
+    .carousel__item:nth-child(9) {
+        animation-delay: calc(3s * 7);
+    }
+
+    .carousel__item:last-child {
+        animation-delay: calc(-3s * 2);
+    }
+
+    .carousel__item-head {
+        width: 100%;
+        padding: 14px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #04FF15;
+        font-size: 4.3vw;
+    }
+
+    .carousel__item-body {
+        text-align: start;
+        width: 100%;
+        color: white;
+        border-radius: 8px;
+        padding: 10px 20px;
+        font-size: 3.3vw;
+    }
+
+    .title {
+        /* text-transform: uppercase; */
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    @keyframes carousel-animate-vertical {
+        0% {
+            transform: translateY(40%) scale(0.5);
+            opacity: 0;
+            z-index: 1;
+            visibility: hidden;
+        }
+
+        3%,
+        11.1111% {
+            transform: translateY(40%) scale(0.7);
+            opacity: .2;
+            z-index: 1;
+            visibility: visible;
+        }
+
+        14.1111%,
+        22.2222% {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+            z-index: 2;
+            visibility: visible;
+        }
+
+        25.2222%,
+        33.3333% {
+            transform: translateY(-40%) scale(0.7);
+            opacity: .2;
+            z-index: 0;
+            visibility: visible;
+        }
+
+        36.3333% {
+            transform: translateY(-40%) scale(0.5);
+            opacity: 0;
+            z-index: 0;
+            visibility: visible;
+        }
+
+        100% {
+            transform: translateY(-40%) scale(0.5);
+            opacity: 0;
+            z-index: 0;
+            visibility: hidden;
+        }
     }
 }
